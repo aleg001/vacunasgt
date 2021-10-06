@@ -1,0 +1,299 @@
+{
+	"info": {
+		"_postman_id": "f794e5f8-1a45-4b4c-9b3d-dbd947ce5675",
+		"name": "ALMA",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "getVacunas",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5001/fir-alma/us-central1/server/getVacunas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"fir-alma",
+						"us-central1",
+						"server",
+						"getVacunas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getRequisitos",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5001/fir-alma/us-central1/server/getRequisitos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"fir-alma",
+						"us-central1",
+						"server",
+						"getRequisitos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAfluencias",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5001/fir-alma/us-central1/server/getAfluencias",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"fir-alma",
+						"us-central1",
+						"server",
+						"getAfluencias"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getDisponibilidad",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5001/fir-alma/us-central1/server/getDisponibilidad",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"fir-alma",
+						"us-central1",
+						"server",
+						"getDisponibilidad"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getDosis",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5001/fir-alma/us-central1/server/getDosis",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"fir-alma",
+						"us-central1",
+						"server",
+						"getDosis"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getIngreso",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5001/fir-alma/us-central1/server/getIngreso",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"fir-alma",
+						"us-central1",
+						"server",
+						"getIngreso"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getGrupos",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5001/fir-alma/us-central1/server/getGrupos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"fir-alma",
+						"us-central1",
+						"server",
+						"getGrupos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getDepartamentos",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5001/fir-alma/us-central1/server/getDepartamentos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"fir-alma",
+						"us-central1",
+						"server",
+						"getDepartamentos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getMunicipios",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5001/fir-alma/us-central1/server/getMunicipios",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"fir-alma",
+						"us-central1",
+						"server",
+						"getMunicipios"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getDias",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5001/fir-alma/us-central1/server/getDias",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"fir-alma",
+						"us-central1",
+						"server",
+						"getDias"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getCentrosVacunacion",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5001/fir-alma/us-central1/server/getCentrosVacunacion",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"fir-alma",
+						"us-central1",
+						"server",
+						"getCentrosVacunacion"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "filtrarCentrosVacunacion",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5001/fir-alma/us-central1/server/getCentrosVacunacion",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"fir-alma",
+						"us-central1",
+						"server",
+						"getCentrosVacunacion"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "buscarCentrosVacunacion",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "http://localhost:5001/fir-alma/us-central1/server/buscarCentrosVacunacion",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"fir-alma",
+						"us-central1",
+						"server",
+						"buscarCentrosVacunacion"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

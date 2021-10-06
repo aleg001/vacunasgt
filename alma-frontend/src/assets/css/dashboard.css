@@ -1,0 +1,92 @@
+.center-list {
+    height: 142vh;
+    overflow-y: auto;
+    padding: 0.5vw 2vh;
+    overflow-x: hidden;
+}
+
+#centro-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    border-radius: 10px;
+    height: fit-content;
+    width: 100%;
+    margin: 1vw;
+    padding: 1vh 3vw 3vh 3vw;
+}
+
+.alma-pill{
+    color: #FFFFFF;
+    background-color: transparent;
+    border: 1px solid #FFFFFF;
+    border-radius: 20px;
+    height: fit-content;
+    width: 100%;
+    height: 100%;
+    padding: 1vw 1vh;
+    text-align: center;
+}
+
+.alma-pill-filled{
+    color: #4F4A88;
+    background-color: #FFFFFF;
+    border: white;
+    border-radius: 20px;
+    height: 100%;
+    width: 100%;
+    padding: 1vw 1vh;
+    text-align: center;
+}
+
+
+#centro-map{
+    width: 100%;
+    height: 50vh;
+    padding: 0.7vw;
+    margin: 1vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    border-radius: 10px;
+}
+
+#centro-map #map{
+    width: 100%;
+    height: 100%;
+    background-color: white !important;
+}
+
+/* CUSTOM */
+#search-container .v-input__slot{
+    background-color: #c3c1d8 !important;
+}
+
+#search-container .v-label{
+    color: #4F4A88;
+}
+
+/* Filtros principales */
+
+.v-icon.v-icon.v-icon--link {
+    color: white !important;
+}
+
+.active-filter .v-input__slot {
+    color: white !important;
+    background-color: #4F4A88 !important;
+}
+
+.active-filter .v-input__slot input {
+    color: white !important;
+}
+
+.active-filter .v-input__icon i {
+    color: white !important;
+}
+
+.v-input__control .v-input__slot:hover,
+.v-input__control .v-input__slot input:hover,
+.v-input__control .v-input__icon i:hover {
+    cursor: pointer !important;
+}

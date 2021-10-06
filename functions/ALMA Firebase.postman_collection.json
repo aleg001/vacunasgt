@@ -1,0 +1,318 @@
+{
+	"info": {
+		"_postman_id": "3bd0c16c-05e2-4cbc-a7d1-027ca3fda3c5",
+		"name": "ALMA Firebase",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "getVacunas",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/getVacunas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"getVacunas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getRequisitos",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/getRequisitos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"getRequisitos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAfluencias",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/getAfluencias",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"getAfluencias"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getDisponibilidad",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/getDisponibilidad",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"getDisponibilidad"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getDosis",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/getDosis",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"getDosis"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getIngreso",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/getIngreso",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"getIngreso"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getGrupos",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/getGrupos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"getGrupos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getDepartamentos",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/getDepartamentos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"getDepartamentos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getMunicipios",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/getMunicipios",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"getMunicipios"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getDias",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/getDias",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"getDias"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getCentrosVacunacion",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/getCentrosVacunacion",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"getCentrosVacunacion"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "filtrarCentrosVacunacion",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "departamento",
+							"value": "Guatemala",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "municipio",
+							"value": "Amatitlán",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "vacuna",
+							"value": "MODERNA",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "grupo",
+							"value": "Afiliados IGSS",
+							"type": "text"
+						},
+						{
+							"key": "dosis",
+							"value": "Segunda",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "requisito",
+							"value": "CARNET VACUNACIÓN + DPI",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "afluencia",
+							"value": "Poca",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "ingreso",
+							"value": "A pie y en carro",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "dia",
+							"value": "domingo",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:5000/getCentrosVacunacion",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"getCentrosVacunacion"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "buscarCentrosVacunacion",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "http://localhost:5000/buscarCentrosVacunacion",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"buscarCentrosVacunacion"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
