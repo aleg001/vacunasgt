@@ -68,6 +68,7 @@
                   style="list-style-type: none;">
                 <li v-for="(r, i) in dosisData"
                     :key="`vaccine-${vaccine}-dosis${doseName}-requirement-${i}`">
+                    <!-- Get group and requirements -->
                   <div v-if="r.available">
                     <v-icon x-small>
                       mdi-check
@@ -86,8 +87,8 @@
             Más Información
           </p>
 
-          <p class="caption">
-            {{ selected.observations }}
+          <p class="caption"> <!-- Used new method to detect URLs -->
+            <span v-html="replaceURLs( selected.observations )"></span>
           </p>
         </v-col>
       </v-row>
@@ -159,7 +160,19 @@ export default {
         case 'SEGUNDA': return '2nda'
         default: return dose
       }
-    },
+    },      // added method to replace URLs with clickable links
+    replaceURLs(message) {
+      if(!message) return;
+    
+      var urlRegex = /(((https?:\/\/)|(www\.))[^\s]+)/g;
+      return message.replace(urlRegex, function (url) {
+        var hyperlink = url;
+        if (!hyperlink.match('^https?://')) {
+          hyperlink = 'http://' + hyperlink;
+        }
+        return '<a href="' + hyperlink + '" target="_blank" rel="noopener noreferrer">' + url + '</a>'
+      });
+    }
   }
 }
 </script>

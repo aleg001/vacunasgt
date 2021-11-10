@@ -1,6 +1,7 @@
 <template>
   <section>
-    <v-app-bar color="primary" dark flat extended fixed>
+    <!-- Added app=true to prevent content overlap -->
+    <v-app-bar color="primary" app=true dark flat extended fixed>
       <v-btn icon @click="goBack">
         <v-icon>mdi-arrow-left</v-icon>
       </v-btn>
@@ -21,7 +22,81 @@
       </template>
     </v-app-bar>
 
-    <div style="height: 13vh;"></div>
+    <!--<div style="height: 15vh;"></div>-->
+
+    <!-- Filter chips -->
+    <v-container>  
+      <template>
+        <div class="text-center">
+
+          <v-chip
+            class="ma-2"
+            color="primary"
+            v-if="department != null"
+          >
+            {{department}}
+          </v-chip>
+
+          <v-chip
+            class="ma-2"
+            color="primary"
+            v-if="municipality != null"
+          >
+            {{municipality}}
+          </v-chip>
+
+          <v-chip
+            class="ma-2"
+            color="primary"
+            v-if="vaccine != null"
+          >
+            {{vaccine}}
+          </v-chip>
+
+          <v-chip
+            class="ma-2"
+            color="primary"
+            v-if="group != null"
+          >
+            {{group}}
+          </v-chip>
+
+          <v-chip
+            class="ma-2"
+            color="primary"
+            v-if="dose != null"
+          >
+            {{dose}}
+          </v-chip>
+
+          <v-chip
+            class="ma-2"
+            color="primary"
+            v-if="requirement != null"
+          >
+            {{requirement}}
+          </v-chip>
+
+          <v-chip
+            class="ma-2"
+            color="primary"
+            v-if="influx != null"
+          >
+            {{influx}}
+          </v-chip>
+
+          <v-chip
+            class="ma-2"
+            color="primary"
+            v-if="entrance != null"
+          >
+            {{entrance}}
+          </v-chip>
+  
+        </div>
+      </template>
+    </v-container>
+    <!-- End filter chips-->
 
     <v-container class="center-list-content">
       <v-data-iterator
@@ -79,11 +154,41 @@
                 <v-container fluid>
                   <v-row>
                     <v-col cols="6" class="secondary--text">
-                      <p v-for="(doses, vaccine) in center.vaccines"
-                          :key="`center-${i}-vaccine-${vaccine}`"
-                          class="mb-0 caption">
-                        {{ vaccine }} - {{ formatDose(doses) }}
-                      </p>
+                      <div v-for="(doses, vaccine) in center.vaccines"
+                        :key="`center-${i}-vaccine-${vaccine}`"
+                        class="mb-0 caption">
+                        <div v-for="(dosisData, doseName) in doses"
+                          :key="`vaccine-${vaccine}-dosis${doseName}`">
+                          <div v-for="(r, i) in dosisData"
+                            :key="`vaccine-${vaccine}-dosis${doseName}-requirement-${i}`">
+                            <!-- Get group and requirements -->
+                            <div v-if="formatDose(doseName) == 'Agotada'">
+                              <p class="mb-0 caption">
+                              {{ vaccine }} - {{ doseName }}
+                              </p>
+                            </div>
+                            <div v-else>
+                              <p class="mb-0 caption">
+                              {{ vaccine }} - {{ formatDose(doseName) }} - {{ r.group }}
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                            
+                        
+                        
+                        <!-- Insert group here -->
+
+                        <!--<div v-for="k in doses"
+                        :key="`center-${i}-vaccine-${vaccine}-dose-${doses}-requirement-${k}`">
+                          {{ k }}
+                        </div> -->
+
+
+                        
+
+                        <!-- End -->                    
+                      </div>
                     </v-col>
 
                     <v-col cols="6" class="d-flex flex-column justify-end black--text text-right">
@@ -197,8 +302,48 @@ export default {
 
   computed: {
     ...mapGetters({
-      '_centers': 'filtered'
+      '_centers': 'filtered',
+      'getDepartment': 'department',
+      'getMunicipality': 'municipality',
+      'getVaccine': 'vaccine',
+      'getGroup': 'group',
+      'getDose': 'dose',
+      'getRequirement': 'requirement',
+      'getInflux': 'influx',
+      'getEntrance': 'entrance',
     }),
+
+    department: {
+      get() { return this.getDepartment },
+    },
+
+    municipality: {
+      get() { return this.getMunicipality },
+    },
+
+    vaccine: {
+      get() { return this.getVaccine },
+    },
+
+    group: {
+      get() { return this.getGroup },
+    },
+
+    dose: {
+      get() { return this.getDose },
+    },
+
+    requirement: {
+      get() { return this.getRequirement },
+    },
+
+    influx: {
+      get() { return this.getInflux },
+    },
+
+    entrance: {
+      get() { return this.getEntrance },
+    },
 
     centers() {
       return this._centers.filter(center => {
@@ -222,7 +367,13 @@ export default {
     }),
 
     formatDose(dose) {
-      const mapper = ([key,]) => {
+      switch (dose) {
+        case dose.match(/AGOTADA/)?.input: return 'Agotada'
+        case 'PRIMERA': return '1era'
+        case 'SEGUNDA': return '2nda'
+        default: return dose
+      }
+      /* const mapper = ([key,]) => {
         switch (key) {
           case 'PRIMERA': return '1era'
           case 'SEGUNDA': return '2nda'
@@ -231,7 +382,7 @@ export default {
       }
 
       const formatted = Object.entries(dose).map(mapper).toString()
-      return formatted
+      return formatted */
     },
 
     goBack() {

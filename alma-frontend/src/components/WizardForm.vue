@@ -1,5 +1,6 @@
 <template>
   <section>
+    <!-- Changed width from 500 to 550 so all steps (including test step) appear in header -->
     <v-stepper v-model="step" non-linear
         :max-width="$vuetify.breakpoint.mobile ? '375px' : '500px'"
         :width="$vuetify.breakpoint.mobile ? '375px' : '500px'">
@@ -7,6 +8,14 @@
         <v-stepper-step editable :complete="step > 1" :step="1">
           Ubicación
         </v-stepper-step>
+
+        <!-- Test step insertion 
+
+        <v-stepper-step editable :complete="step > 1.5" :step="1.5">
+          Dia
+        </v-stepper-step>        
+
+        test step insertion end -->
 
         <v-stepper-step editable :complete="step > 2" :step="2">
           Vacuna
@@ -23,10 +32,20 @@
         </v-stepper-content>
 
         <v-stepper-content step="1" class="px-3 pb-1">
+          <!-- Changed next to halfNext to go into test step -->
           <form-step-one @next="next" @back="back"/>
         </v-stepper-content>
 
+        <!-- Test step insertion
+
+        <v-stepper-content step="1.5" class="px-3 pb-1">
+          <form-step-test @next="halfNext" @back="halfBack"/>
+        </v-stepper-content>      
+
+        end -->
+
         <v-stepper-content step="2" class="px-3 pb-1">
+          <!-- Changed back to halfBack to go into test step -->
           <form-step-two @next="next" @back="back"/>
         </v-stepper-content>
 
@@ -41,6 +60,9 @@
 <script>
 import FormStepZero from './FormStepZero.vue';
 import FormStepOne from './FormStepOne.vue';
+// insert test
+//import FormStepTest from './FormStepTest.vue';
+// end
 import FormStepTwo from './FormStepTwo.vue';
 import FormStepThree from './FormStepThree.vue';
 import { mapMutations } from 'vuex';
@@ -49,6 +71,9 @@ export default {
   components: {
     FormStepZero,
     FormStepOne,
+    // insert test
+    //FormStepTest,
+    // end
     FormStepTwo,
     FormStepThree,
   },
@@ -77,6 +102,16 @@ export default {
     back() {
       this.step = this.step - 1
     },
+
+    /* transition into and out of test step (0.5 increase instead of 1)
+    halfNext() {
+      this.step = this.step + 0.5
+    },
+
+    halfBack() {
+      this.step = this.step - 0.5
+    },
+    end */
 
     next() {
       this.step = this.step + 1
