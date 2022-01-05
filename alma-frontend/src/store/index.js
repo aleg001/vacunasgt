@@ -56,7 +56,6 @@ let getters = {
       let filteredAfluencia = filteredRequisito.filter(item => item.afluencia === state.selectedAfluencia || state.selectedAfluencia == null )
       let filteredIngreso = filteredAfluencia.filter(item => item.ingreso === state.selectedIngreso || state.selectedIngreso == null )
       // let filteredDias = filteredIngreso.filter(item => item.ingreso === state.selectedDias || state.selectedDias == null )
-
       return filteredIngreso
     }
     catch {
@@ -75,7 +74,7 @@ let getters = {
       value: item,
     }))
   },
-
+// Problem might be here
   MUNICIPIOS_AVAILABLE: (_state, getters) => {
     const ordered = _.orderBy(_.uniq(_.map(
       getters.FILTERED_CENTROS,
@@ -310,7 +309,7 @@ let getters = {
     return toUpperCase(_.orderBy(_.uniq(ordered)))
   },
 
-  group: state => state.requirement,
+  group: state => state.group,
   groups: (state, getters) => {
     let ordered = []
     for (const center of getters.filtered) {

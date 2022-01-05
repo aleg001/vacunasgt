@@ -75,6 +75,8 @@ export default {
 
       set(value) { 
         this.setVaccine(value)
+        this.setDose(null)
+        this.setGroup(null)
       },
     },
 
@@ -85,6 +87,7 @@ export default {
 
       set(value) { 
         this.setDose(value)
+        this.setGroup(null)
       },
     },
   },
@@ -93,6 +96,7 @@ export default {
     ...mapMutations({
       'setVaccine': 'SET_VACCINE',
       'setDose': 'SET_DOSE',
+      'setGroup': 'SET_GROUP',
     }),
 
     all() {

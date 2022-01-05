@@ -159,19 +159,30 @@
                         class="mb-0 caption">
                         <div v-for="(dosisData, doseName) in doses"
                           :key="`vaccine-${vaccine}-dosis${doseName}`">
+                          <!-- Use unavailable variable to only write AGOTADA once
+                          {{unavailable}} = false -->
                           <div v-for="(r, i) in dosisData"
                             :key="`vaccine-${vaccine}-dosis${doseName}-requirement-${i}`">
-                            <!-- Get group and requirements -->
-                            <div v-if="formatDose(doseName) == 'Agotada'">
-                              <p class="mb-0 caption">
-                              {{ vaccine }} - {{ doseName }}
-                              </p>
-                            </div>
-                            <div v-else>
-                              <p class="mb-0 caption">
-                              {{ vaccine }} - {{ formatDose(doseName) }} - {{ r.group }}
-                              </p>
-                            </div>
+                            <!-- Get group and requirements 
+                            <div v-if="unavailable == false"> -->
+                              <div v-if="formatDose(doseName) == 'Agotada'">
+                                <p class="mb-0 caption">
+                                {{ doseName }} - {{ vaccine }}
+                                <!-- {{unavailable}} = true -->
+                                </p>
+                              </div>
+                              <div v-else-if="doseName == 'CERRADO HOY'">
+                                <p class="mb-0 caption">
+                                {{ doseName }}
+                                <!-- {{unavailable}} = true -->
+                                </p>
+                              </div>
+                              <div v-else>
+                                <p class="mb-0 caption">
+                                {{ formatDose(doseName) }} - {{ vaccine }} - {{ r.group }}
+                                </p>
+                              </div>
+                            <!-- </div> -->
                           </div>
                         </div>
                             
@@ -294,6 +305,7 @@ export default {
     search: '',
     detail: false,
     schedule: null,
+    // unavailable: false,
     schedules: [
       { text: 'Entre Semana', value: 'week' },
       { text: 'Fines de Semana', value: 'weekend' },

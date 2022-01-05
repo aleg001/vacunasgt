@@ -75,6 +75,10 @@ export default {
 
       set(value) { 
         this.setDepartment(value)
+        this.setMunicipality(null)
+        this.setVaccine(null)
+        this.setDose(null)
+        this.setGroup(null)
       },
     },
 
@@ -85,6 +89,9 @@ export default {
 
       set(value) { 
         this.setMunicipality(value)
+        this.setVaccine(null)
+        this.setDose(null)
+        this.setGroup(null)
       },
     },
   },
@@ -93,6 +100,9 @@ export default {
     ...mapMutations({
       'setDepartment': 'SET_DEPARTMENT',
       'setMunicipality': 'SET_MUNICIPALITY',
+      'setVaccine': 'SET_VACCINE',
+      'setDose': 'SET_DOSE',
+      'setGroup': 'SET_GROUP',
     }),
 
     all() {

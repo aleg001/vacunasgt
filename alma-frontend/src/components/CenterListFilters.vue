@@ -132,6 +132,7 @@ export default {
       'getDepartment': 'department',
       'getMunicipality': 'municipality',
       'getVaccine': 'vaccine',
+      'getGroup': 'group',
       'getDose': 'dose',
       'getRequirement': 'requirement',
       'getInflux': 'influx',
@@ -140,37 +141,71 @@ export default {
 
     department: {
       get() { return this.getDepartment },
-      set(value) { this.setDepartment(value) },
+      set(value) {
+        this.setDepartment(value)
+        this.setMunicipality(null)
+        this.setVaccine(null)
+        this.setDose(null)
+        this.setGroup(null)
+        this.setRequirement(null)
+        this.setInflux(null)
+        this.setEntrance(null) },
     },
 
     municipality: {
       get() { return this.getMunicipality },
-      set(value) { this.setMunicipality(value) },
+      set(value) { 
+        this.setMunicipality(value)
+        this.setVaccine(null)
+        this.setDose(null)
+        this.setGroup(null)
+        this.setRequirement(null)
+        this.setInflux(null)
+        this.setEntrance(null) },
     },
 
     vaccine: {
       get() { return this.getVaccine },
-      set(value) { this.setVaccine(value) },
+      set(value) { 
+        this.setVaccine(value)
+        this.setDose(null)
+        this.setGroup(null)
+        this.setRequirement(null)
+        this.setInflux(null)
+        this.setEntrance(null) },
     },
 
     group: {
       get() { return this.getGroup },
-      set(value) { this.setGroup(value) },
+      set(value) { 
+        this.setGroup(value)
+        this.setDose(null)
+        this.setRequirement(null)
+        this.setInflux(null)
+        this.setEntrance(null) },
     },
 
     dose: {
       get() { return this.getDose },
-      set(value) { this.setDose(value) },
+      set(value) { 
+        this.setDose(value)
+        this.setRequirement(null)
+        this.setInflux(null)
+        this.setEntrance(null) },
     },
 
     requirement: {
       get() { return this.getRequirement },
-      set(value) { this.setRequirement(value) },
+      set(value) { 
+        this.setRequirement(value)
+        this.setInflux(null)
+        this.setEntrance(null) },
     },
 
     influx: {
       get() { return this.getInflux },
-      set(value) { this.setInflux(value) },
+      set(value) { this.setInflux(value)
+      this.setEntrance(null) },
     },
 
     entrance: {
