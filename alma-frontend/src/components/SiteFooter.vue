@@ -20,9 +20,21 @@
     <footer :class="white ? 'footer-light' : 'footer-dark'">
       <v-container>
         <v-row justify="center">
-          <span class="footer-title text-center">
-            Envíanos tu reporte de los centros de vacunación
+          <span
+            class="footer-title text-center"
+            style="
+              color: #7f6cf6;
+              font-weight: bold;
+              font-size: 50px;
+              letter-spacing: -2px;
+            "
+          >
+            Alma
           </span>
+
+          <!-- <span class="footer-title text-center" >Busca tu vacuna</span>
+          <span class="footer-title text-center">Directorio</span>
+          <span class="footer-title text-center">FAQ</span> -->
         </v-row>
         <v-row justify="center">
           <v-btn
@@ -84,7 +96,7 @@
                 v-on="on"
                 href="https://twitter.com/alma_responde"
               >
-                <i class="fab fa-twitter"></i>
+                <i class="fab fa-twitter" style="color: #3e3e3e"></i>
               </v-btn>
             </template>
 
@@ -101,7 +113,7 @@
                 v-on="on"
                 href="https://www.instagram.com/alma_responde/"
               >
-                <i class="fab fa-instagram"></i>
+                <i class="fab fa-instagram" style="color: #3e3e3e"></i>
               </v-btn>
             </template>
 
@@ -118,13 +130,16 @@
                 v-on="on"
                 href="https://www.facebook.com/chatbotALMA"
               >
-                <i class="fab fa-facebook-f"></i>
+                <i class="fab fa-facebook-f" style="color: #3e3e3e"></i>
               </v-btn>
             </template>
 
             <span>Facebook</span>
           </v-tooltip>
-          <span class="footer-subtitle text-bottom" font_size="10px">
+          <span
+            class="footer-subtitle text-bottom"
+            style="color: #3e3e3e; font-size: 15px"
+          >
             ©2022 All Rights Reserved.
           </span>
         </v-row>
